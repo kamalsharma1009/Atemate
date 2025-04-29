@@ -7,7 +7,9 @@ import WaterTrackerScreen from '../screens/WaterTrackerScreen';
 import FitnessTrackerScreen from '../screens/FitnessTrackerScreen';
 import BarcodeScannerScreen from '../screens/BarcodeScannerScreen';
 import ChatbotScreen from '../screens/ChatbotScreen';
-
+import DieticianDashboardScreen from '../screens/DieticianDashboardScreen';
+import AddTipScreen from '../screens/AddTipScreen';
+import EditTipScreen from '../screens/EditTipScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,9 +23,13 @@ const AppNavigator = () => {
       <Stack.Screen name="FitnessTracker" component={FitnessTrackerScreen} />
       <Stack.Screen name="BarcodeScanner" component={BarcodeScannerScreen} />
       <Stack.Screen name="Chatbot" component={ChatbotScreen} />
+      <Stack.Screen name="DieticianDashboard" component={DieticianDashboardScreen} />
+      <Stack.Screen name="AddTip" component={AddTipScreen} />
+      <Stack.Screen name="EditTip" component={EditTipScreen} />
     </Stack.Navigator>
   );
 };
 
 
 export default AppNavigator;
+

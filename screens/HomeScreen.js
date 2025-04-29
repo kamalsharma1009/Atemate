@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { getAuth } from 'firebase/auth';
 import { doc, getDoc, collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
-import { db } from '../firebaseConfig'; // Make sure you have db exported from firebase.js
-import moment from 'moment'; // npm install moment
+import { db } from '../firebaseConfig'; 
+import moment from 'moment'; 
+import { useNavigation } from '@react-navigation/native';
+import { Button } from 'react-native';
 import Header from '../components/Header';
 
 const HomeScreen = () => {
@@ -12,6 +14,7 @@ const HomeScreen = () => {
   const [stepsToday, setStepsToday] = useState(0);
   const [latestTip, setLatestTip] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
+  const navigation = useNavigation();
 
   const auth = getAuth();
   const user = auth.currentUser;
@@ -88,11 +91,13 @@ const HomeScreen = () => {
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Today's Water Intake 💧</Text>
         <Text style={styles.cardData}>{waterToday} ml</Text>
+        <Button style={styles.editButton} title="Track Water" onPress={() => navigation.navigate('WaterTracker')} />
       </View>
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Today's Steps 🚶‍♂️</Text>
         <Text style={styles.cardData}>{stepsToday} steps</Text>
+        <Button style={styles.editButton} title="Track Fitness" onPress={() => navigation.navigate('FitnessTracker')} />
       </View>
 
       <View style={styles.card}>
@@ -127,4 +132,10 @@ const styles = StyleSheet.create({
   cardTitle: { fontSize: 18, color: '#333', marginBottom: 10, fontWeight: '600' },
   cardData: { fontSize: 22, fontWeight: 'bold', color: '#6200ee' },
   tipContent: { marginTop: 8, fontSize: 16, color: '#555' },
+  editButton: {
+    marginTop: 20,
+    backgroundColor: '#4CAF50',
+    padding: 10,
+    borderRadius: 10,
+  },
 });

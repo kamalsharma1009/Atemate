@@ -47,7 +47,7 @@ const SignupScreen = ({ navigation }) => {
           fitnessTracker: {},
         });
       } else if (userType === 'dietician') {
-        await setDoc(doc(db, 'dieticians', uid), {
+        await setDoc(doc(db, 'dietician', uid), {
           name,
           email,
           qualifications,
@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#6200ee',
     marginBottom: 20,
+    marginVertical: 20,
     textAlign: 'center',
   },
   input: {

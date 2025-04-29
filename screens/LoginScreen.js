@@ -19,14 +19,14 @@ const LoginScreen = ({ navigation }) => {
       const user = userCredential.user;
 
       const userDoc = await getDoc(doc(db, 'users', user.uid));
-      const dieticianDoc = await getDoc(doc(db, 'dieticians', user.uid));
+      const dieticianDoc = await getDoc(doc(db, 'dietician', user.uid));
 
       if (userDoc.exists()) {
         navigation.replace('Main', { userType: 'user' });
       } else if (dieticianDoc.exists()) {
         const data = dieticianDoc.data();
         if (data.verified) {
-          navigation.replace('Main', { userType: 'dietician' });
+          navigation.replace('DieticianDashboard', { userType: 'dietician' });
         } else {
           Alert.alert('Verification Pending', 'Your account is under verification.');
         }

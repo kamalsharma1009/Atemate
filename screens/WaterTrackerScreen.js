@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { firestore } from '../firebaseConfig';
+import { db } from '../firebaseConfig';
 import { doc, updateDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
@@ -21,7 +21,7 @@ const WaterTrackerScreen = () => {
       const today = new Date().toISOString().split('T')[0]; // yyyy-mm-dd
 
       if (user) {
-        const userDocRef = doc(firestore, 'users', user.uid);
+        const userDocRef = doc(db, 'users', user.uid);
 
         await updateDoc(userDocRef, {
           [`waterTracker.${today}`]: parseInt(waterIntake),

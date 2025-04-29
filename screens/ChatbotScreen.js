@@ -77,7 +77,7 @@ const ChatbotScreen = () => {
       {item.role === 'bot' && (
         <View style={styles.avatarContainer}>
           <Image 
-            source={require('../assets/bot-avatar.png')} // Replace with your bot avatar
+            source={require('../assets/bot-avatar.png')} 
             style={styles.botAvatar}
           />
         </View>
