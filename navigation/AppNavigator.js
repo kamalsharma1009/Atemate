@@ -5,6 +5,9 @@ import SignupScreen from '../screens/SignupScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import WaterTrackerScreen from '../screens/WaterTrackerScreen';
 import FitnessTrackerScreen from '../screens/FitnessTrackerScreen';
+import BarcodeScannerScreen from '../screens/BarcodeScannerScreen';
+import ChatbotScreen from '../screens/ChatbotScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +19,8 @@ const AppNavigator = () => {
       <Stack.Screen name="Main" component={BottomTabNavigator} />
       <Stack.Screen name="WaterTracker" component={WaterTrackerScreen} />
       <Stack.Screen name="FitnessTracker" component={FitnessTrackerScreen} />
+      <Stack.Screen name="BarcodeScanner" component={BarcodeScannerScreen} />
+      <Stack.Screen name="Chatbot" component={ChatbotScreen} />
     </Stack.Navigator>
   );
 };

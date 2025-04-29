@@ -5,7 +5,7 @@ import { setDoc, doc } from 'firebase/firestore';
 import { auth, db } from '../firebaseConfig';
 
 const SignupScreen = ({ navigation }) => {
-  const [userType, setUserType] = useState('user'); // default user
+  const [userType, setUserType] = useState('user'); 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

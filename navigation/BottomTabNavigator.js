@@ -6,6 +6,7 @@ import HealthTipsScreen from '../screens/HealthTipsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { Ionicons } from '@expo/vector-icons';
 import ChatbotButton from '../components/ChatbotButton';
+import ChatbotScreen from '../screens/ChatbotScreen';
 
 const Tab = createBottomTabNavigator();
 
